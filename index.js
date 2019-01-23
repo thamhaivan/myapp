@@ -10,11 +10,12 @@ app.set('views','views');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-var users =  [
-  {name:'Tung',age:14},
-  {name:"Manh",age: 16},
-  {name:"Trang",age: 16},
-];
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+db.defaults({users:[]}).write();
 
 app.get('/',function(req,res){
   res.render('index',function(){
