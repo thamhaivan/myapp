@@ -1,4 +1,7 @@
 <h1>Users</h1>
+form(name="search",action="/users/search")
+  input(name="q",type="q")
+  button(type="submit") Search
 ul
   each user,index in users
     li= index + ':' + user.name
