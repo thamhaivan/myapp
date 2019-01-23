@@ -24,12 +24,19 @@ app.get('/',function(req,res){
 });
 
 app.get('/users',function(req,res){
-  res.render('users/index',{users:users});
+  res.render('users/index',{users:db.get('users').value()});
 })
+
+app.get('/user/:id',function(req,res){
+  var id = parseInt(req.params.id);
+  var user = db.get('users').find({id:id}).value();
+  
+  res.render('users/view',{user:user});
+});
 
 app.get('/users/search',function(req,res){
   var q = req.query.q;
-  var filterUsers = users.filter(function(user){
+  var filterUsers = db.get('users').value().filter(function(user){
     return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
   });
   
@@ -41,7 +48,7 @@ app.get('/users/create',function(req,res){
 });
 
 app.post('/users/create',function(req,res){
-  users.push(req.body);
+  db.get('users').push(req.body).write();
   res.redirect('/users');
 });
 

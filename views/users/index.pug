@@ -5,4 +5,6 @@ form(name="search",action="/users/search")
   button(type="submit") Search
 ul
   each user,index in users
-    li= index + ':' + user.name
+    li
+      span=user.name
+      a(href="/user/" + user.id) View
