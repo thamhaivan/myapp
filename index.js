@@ -1,8 +1,14 @@
 var express = require('express');
-
 var app = express();
+
+
+var bodyParser = require('body-parser');
+
 app.set('view engine','pug');
 app.set('views','views');
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 var users =  [
   {name:'Tung',age:14},
@@ -28,6 +34,17 @@ app.get('/users/search',function(req,res){
   
   res.render('users/index',{users:filterUsers});
 });
+
+app.get('/users/create',function(req,res){
+  res.render('users/create');
+});
+
+app.post('/users/create',function(req,res){
+  users.push(req.body);
+  res.redirect('/users');
+});
+
+
 app.listen('3000',function(){
   console.log('Hello world');
 });
