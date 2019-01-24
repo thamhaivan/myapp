@@ -1,10 +1,12 @@
-<h1>Users</h1>
-a(href="/users/create") Add
-form(name="search",action="/users/search")
-  input(name="q",type="q")
-  button(type="submit") Search
-ul
-  each user,index in users
-    li
-      span=user.name
-      a(href="/users/" + user.id) View
+extends ../layouts/common.pug
+block content  
+  <h1>Users</h1>
+  a(href="/users/create") Add
+  form(name="search",action="/users/search",class="d-flex")
+    input(name="q",type="text",class="form-control")
+    button(type="submit",class="btn btn-primary") Search
+  ul
+    each user,index in users
+      li
+        span=user.name
+        a(href="/users/" + user.id) View  
