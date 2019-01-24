@@ -1,12 +1,20 @@
 extends ../layouts/common.pug
 block content  
-  <h1>Users</h1>
-  a(href="/users/create") Add
-  form(name="search",action="/users/search",class="d-flex")
-    input(name="q",type="text",class="form-control")
-    button(type="submit",class="btn btn-primary") Search
-  ul
+  h1 
+    span(class="mr-3") Users
+    a(href="/users/create",class="btn btn-success") Add new
+  .d-flex.align-items-center    
+    form(name="search",action="/users/search",class="ml-auto d-flex")
+      input(name="q",type="text",class="form-control")
+      button(type="submit",class="btn btn-primary") Search
+  table(class="table")
+    tr
+      th Name
+      th Age
+      th Action
     each user,index in users
-      li
-        span=user.name
-        a(href="/users/" + user.id) View  
+      tr
+        td=user.name
+        td=user.age
+        td 
+          a(href="/users/" + user.id) View  

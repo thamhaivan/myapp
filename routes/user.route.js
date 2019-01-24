@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var shortid = require('shortid');
-
 var controller = require('../controllers/user.controller');
 
 router.get('/',controller.index)
