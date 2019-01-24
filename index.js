@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-
+var shortid = require('shortid')
 var bodyParser = require('body-parser');
 
 app.set('view engine','pug');
@@ -28,7 +28,7 @@ app.get('/users',function(req,res){
 })
 
 app.get('/user/:id',function(req,res){
-  var id = parseInt(req.params.id);
+  var id = req.params.id;
   var user = db.get('users').find({id:id}).value();
   
   res.render('users/view',{user:user});
@@ -48,6 +48,7 @@ app.get('/users/create',function(req,res){
 });
 
 app.post('/users/create',function(req,res){
+  req.body.id = shortid.generate();
   db.get('users').push(req.body).write();
   res.redirect('/users');
 });
