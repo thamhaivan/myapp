@@ -2,15 +2,16 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-
+var cookieParser = require('cookie-parser');
 var userRoute = require('./routes/user.route');
 
 app.set('view engine','pug');
 app.set('views','views');
-app.use(express.static('public'))
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
+app.use(cookieParser());
+app.use(express.static('public'));
 
 app.use('/users',userRoute);
 
