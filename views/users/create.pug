@@ -1,9 +1,14 @@
 extends ../layouts/common.pug
 block content  
   h1 Create user
+  if errors
+    each error in errors
+      .alert.alert-danger=error
   form(method="post",action="/users/create")
     div(class="form-group")
-      input(name="name",type="text",placeholder="Ten",class="form-control")
+      label(for="name") Name
+      input(id="name",name="name",type="text",class="form-control",value=values ? values.name  : '')
     div(class="form-group")    
-      input(name="age",type="text",placeholder="Tuoi",class="form-control")
+      label Age
+      input(name="age",type="text",class="form-control",value= values ? values.age : "")
     button(type="submit",class="btn btn-primary") Create
