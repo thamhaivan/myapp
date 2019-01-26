@@ -3,7 +3,7 @@ module.exports.createPost = function(req,res,next){
   if(!req.body.name){
     errors.push('Nam is required');
   }
-  if(!req.body.age){
+  if(!req.body.phone){
     errors.push('Phone is required');
   }
   

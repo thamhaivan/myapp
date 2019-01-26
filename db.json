@@ -1,54 +1,25 @@
 {
   "users": [
     {
-      "name": "gsa",
-      "age": "gdsa",
-      "id": "UflUcGGNE"
+      "name": "dai",
+      "email": "daibkz@gmail.com",
+      "phone": "123456789",
+      "id": "mfL-_0MPS",
+      "password": "123456"
     },
     {
-      "name": "Chu Thong",
-      "age": "12",
-      "id": "R4uEcdf9S"
+      "name": "trangdai",
+      "email": "trangdai@gmail.com",
+      "phone": "48320532532",
+      "id": "X9Lo_mtGG",
+      "password": "123456"
     },
     {
-      "name": "chu ba thong",
-      "age": "12",
-      "id": "YUzeGlreg"
-    },
-    {
-      "name": "sdgds",
-      "age": "432",
-      "id": "c-C5Xwrhq"
-    },
-    {
-      "name": "tenten",
-      "age": "342354",
-      "id": "x_C1I5TxH"
-    },
-    {
-      "name": "Kia",
-      "age": "34",
-      "id": "w7Z-jnoUw"
-    },
-    {
-      "name": "nguyen",
-      "age": "12",
-      "id": "u2JxPeGbY"
-    },
-    {
-      "name": "cungfu",
-      "age": "324325325",
-      "id": "Oyla2VC4J"
-    },
-    {
-      "name": "loanh quanh",
-      "age": "123",
-      "id": "5q5Onjuq9"
-    },
-    {
-      "name": "Gate",
-      "age": "12",
-      "id": "GhuRpfVHx"
+      "name": "sagdsa",
+      "email": "abc@gmail.com",
+      "phone": "123456",
+      "id": "P8H3ARSkZ",
+      "password": "123456"
     }
   ]
 }
