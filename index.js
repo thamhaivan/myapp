@@ -22,6 +22,9 @@ app.use('/users',userRoute);
 app.use('/auth',authRoute);
 app.use('/product',productRoute);
 
+app.get('/ubuntu',function(req,res){
+  res.send("OK send github");
+});
 app.get('/',function(req,res){
   res.render('index',function(){
   })
