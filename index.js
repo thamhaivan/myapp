@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route')
 var productRoute = require('./routes/product.route');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/example1');
 
 app.set('view engine','pug');
 app.set('views','views');
