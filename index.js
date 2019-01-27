@@ -31,6 +31,6 @@ app.get('/',function(req,res){
 });
 
 app.listen('3000',function(req,res){
-  res.send("Hello");
+  
 });
 
