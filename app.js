@@ -3,4 +3,8 @@ var router = express.Router();
 console.log("JLGJDJG");
 app.set('view engine','views');
 console.log('asjgljdsg');
+console.log('asjgljdsg');
+console.log('asjgljdsg');
+console.log('asjgljdsg');
+console.log('asjgljdsg');
 
